@@ -1,0 +1,12 @@
+<h1>Article#show</h1>
+
+Article n°<%= @article.id %> <br />
+<%= raw @article.title %>
+<%= raw @article.content %>
+
+<%= link_to('Update', edit_article_path) %>
+
+<%= link_to "Delete", article_path(@article.id),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<%= link_to('All articles', articles_path) %>

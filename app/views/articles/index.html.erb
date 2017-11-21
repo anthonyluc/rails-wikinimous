@@ -1,0 +1,9 @@
+<h1>Article#index</h1>
+<p>Find me in app/views/article/index.html.erb</p>
+
+<%= link_to('New article',new_article_path) %>
+
+<% @articles.each do |article| %>
+  <h2><%= raw Kramdown::Document.new(link_to("#{article.title}",article_path(article.id))).to_html %></h2>
+  <p><%= raw Kramdown::Document.new(article.content).to_html %></p>
+<% end %>
